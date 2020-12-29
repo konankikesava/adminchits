@@ -1,0 +1,33 @@
+<div class="newElement">
+    <h2 class="card-title">
+        <i class="fa fa-product-hunt" aria-hidden="true"></i> Customer Details</h2>
+    <button class="ilogin" mat-raised-button color="primary" routerLink="/AddCustomer" routerLinkActive="active" type="submit"><mat-icon>person_add</mat-icon>Add Customer</button>
+</div>
+
+<table class="content-table">
+    <thead>
+        <tr>
+
+            <th>Customer</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>E-mail</th>
+            <th>Pan</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataCustomer of dataCustomer" class="text-center">
+
+            <td>{{dataCustomer.customer}}</td>
+            <td>{{dataCustomer.address}}</td>
+            <td>{{dataCustomer.phone}}</td>
+            <td>{{dataCustomer.email}}</td>
+            <td>{{dataCustomer.pan}}</td>
+            <td>
+                <button class="Delete_Info" mat-raised-button color="primary" [routerLink]="['/customerInformation', dataCustomer.id]"><mat-icon>edit</mat-icon></button>
+                <button class="Delete_Info" mat-raised-button color="warn" (click)="deleteInformation(dataCustomer.id)"><mat-icon>delete</mat-icon></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

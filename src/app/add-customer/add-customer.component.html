@@ -1,0 +1,47 @@
+<mat-card class="example-card">
+    <div class="container">
+        <h2 class="jumbotron text-center">Add Customer</h2>
+
+        <form class="add-form" [formGroup]="addform" (ngSubmit)="addCustomer()" #myForm="ngForm">
+
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>Customer Name</mat-label>
+                <input matInput placeholder="customer" formControlName="customer">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Address</mat-label>
+                <textarea matInput placeholder="Leave a comment" formControlName="address"></textarea>
+
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input matInput placeholder="phone" formControlName="phone">
+
+
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="email" formControlName="email">
+
+
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>PAN</mat-label>
+                <input matInput placeholder="pan" formControlName="pan">
+
+
+            </mat-form-field>
+
+            <nav id="Buttons">
+
+                <button class="ilogin" mat-raised-button color="primary" routerLinkActive="active" type="submit" [disabled]="!myForm.form.valid">Save</button>
+                <button id="Cancel" mat-raised-button color="" routerLinkActive="active" routerLink="/Home">Cancel</button>
+            </nav>
+        </form>
+    </div>
+</mat-card>

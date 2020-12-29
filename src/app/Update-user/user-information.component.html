@@ -1,0 +1,42 @@
+<mat-card class="example-card">
+    <div class="container">
+        <h2 class="jumbotron text-center">UPDATE USER</h2>
+
+        <form class="update-form" [formGroup]="updateform" (ngSubmit)="UpdateUser()" *ngIf="isUpdated" #myForm="ngForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" [(ngModel)]="user.name">
+
+
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-select placeholder="Select Plan" formControlName="plan" [(ngModel)]="user.plan">
+
+                    <mat-option value="Saving Account">Saving Account</mat-option>
+                    <mat-option value="Current Account">Current Account</mat-option>
+                    <mat-option value="Mutual Account">Mutual Account</mat-option>
+                </mat-select>
+
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Amount</mat-label>
+                <input matInput value="{{user.amount}}" [(ngModel)]="user.amount" formControlName="amount">
+
+
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Due-Amount</mat-label>
+                <input matInput [(ngModel)]="user.dueAmount" formControlName="dueAmount">
+
+
+            </mat-form-field>
+
+            <nav id="Buttons">
+                <button class="Save" mat-raised-button color="primary" routerLinkActive="active" type="submit" [disabled]="!myForm.form.valid">Save</button>
+                <button id="Cancel" mat-raised-button color="" routerLinkActive="active" routerLink="/Home">Cancel</button>
+            </nav>
+        </form>
+    </div>
+</mat-card>

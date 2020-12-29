@@ -1,0 +1,28 @@
+.add-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    align-content: center;
+}
+
+.example-card {
+    height: 20em;
+    width: 20em;
+    margin-top: 5%;
+    text-align: justify;
+    margin-left: 35%;
+    /* background-color:paleturquoise;  */
+}
+
+.bg {
+    display: flex;
+    height: 89%;
+    /* width: 100% ;  */
+    background-attachment: fixed;
+}
+
+#Buttons {
+    margin-top: 10%;
+}

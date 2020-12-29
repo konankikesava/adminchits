@@ -1,0 +1,37 @@
+<mat-card class="example-card">
+    <div class="container" *ngIf="isUpdated">
+        <h2 class="jumbotron text-center">UPDATE Plan {{plan.planName}}</h2>
+
+        <form class="update-form" [formGroup]="updateform" (ngSubmit)="UpdatePlan()" #myForm="ngForm">
+
+
+
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>Total Amount</mat-label>
+                <input matInput formControlName="totalAmount" [(ngModel)]="plan.totalAmount">
+
+
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Amount Payable</mat-label>
+                <input matInput [(ngModel)]="plan.amountPayable" formControlName="amountPayable">
+
+
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Duration</mat-label>
+                <input matInput [(ngModel)]="plan.Duration" formControlName="Duration">
+
+
+            </mat-form-field>
+
+            <nav id="Buttons">
+                <button class="Save" mat-raised-button color="primary" routerLinkActive="active" type="submit" [disabled]="!myForm.form.valid">Save</button>
+                <button id="Cancel" mat-raised-button color="" routerLinkActive="active" routerLink="/Home">Cancel</button>
+            </nav>
+        </form>
+    </div>
+</mat-card>

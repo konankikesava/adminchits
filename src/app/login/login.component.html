@@ -1,0 +1,37 @@
+<body>
+    <html class="bg">
+    <mat-card class="example-card">
+        <div class="container">
+            <h2 class="jumbotron text-center">Login Form</h2>
+            <form class="login-form" [formGroup]="loginform" (ngSubmit)="loginUser()">
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Enter Email or Phone" formControlName="emailId"><br>
+                    <mat-error *ngIf="loginform.get('emailId')?.touched
+               && loginform.get('emailId')?.hasError('required')">
+                        emailId is required</mat-error>
+                    <mat-error *ngIf="loginform.get('emailId')?.hasError('pattern')">Email or phone is incorrect
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="password" matInput placeholder="Enter Password" formControlName="password">
+                    <mat-error *ngIf="loginform.get('password')?.touched
+                    && loginform.get('password')?.hasError('required')">
+                        password is required</mat-error>
+                    <mat-error *ngIf="loginform.get('password')?.hasError('pattern')">
+                        Password must contain more than 8 characters, 1 upper case letter, and 1 special character
+                    </mat-error>
+
+                </mat-form-field>
+
+                <div class="login">
+                    <nav>
+                        <button class="ilogin" mat-raised-button color="primary" type="submit">Login</button>
+                        <button class="register" mat-raised-button color="primary" routerLink="/register" routerLinkActive="active">Register</button>
+                    </nav>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+
+    </html>
+</body>

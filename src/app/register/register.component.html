@@ -1,0 +1,49 @@
+<body>
+    <html class="bg">
+    <mat-card class="example-card">
+        <div class="container">
+            <h2 class="jumbotron text-center">Register Form</h2>
+            <form class="login-form" [formGroup]="registerform" (ngSubmit)="RegisterUser()">
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Enter User name" formControlName="userName"><br>
+                    <mat-error *ngIf="registerform.get('userName')?.touched
+             && registerform.get('userName')?.hasError('required')">
+                        User name is required</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="email" matInput placeholder="Enter Email or Phone" formControlName="emailId"><br>
+                    <mat-error *ngIf="registerform.get('emailId')?.touched
+             && registerform.get('emailId')?.hasError('required')">
+                        emailId or phone is required</mat-error>
+                    <mat-error *ngIf="registerform.get('emailId')?.hasError('pattern')">
+                        invalid E-mail or Phone
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="password" matInput placeholder="Enter Password" formControlName="password">
+                    <mat-error *ngIf="registerform.get('password')?.touched
+                  && registerform.get('password')?.hasError('required')">
+                        password is required</mat-error>
+                    <mat-error *ngIf="registerform.get('password')?.hasError('pattern')">
+                        Password must contain more than 8 characters, 1 upper case letter, and 1 special character
+                    </mat-error>
+
+                </mat-form-field>
+
+                <div class="login">
+
+                    <nav>
+                        <div class="form-group">
+                            <button [disabled]="loading" mat-raised-button color="primary">Register</button>
+                            <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+                            />
+                            <a routerLink="/login" class="btn btn-link">Cancel</a>
+                        </div>
+                    </nav>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+
+    </html>
+</body>

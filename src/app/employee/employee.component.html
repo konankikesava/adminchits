@@ -1,0 +1,35 @@
+<div class="newElement">
+    <h2 class="card-title">
+        <i class="fa fa-product-hunt" aria-hidden="true"></i> Employee Details</h2>
+    <button class="ilogin" mat-raised-button color="primary" routerLink="/AddEmployee" routerLinkActive="active" type="submit"><mat-icon>person_add</mat-icon>Add Employee</button>
+</div>
+
+<table class="content-table">
+    <thead>
+        <tr>
+
+            <th>Employee No.</th>
+            <th>Name</th>
+            <th>Design</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>E-mail</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataEmployee of dataEmployee" class="text-center">
+
+            <td>{{dataEmployee.employeeNo}}</td>
+            <td>{{dataEmployee.name}}</td>
+            <td>{{dataEmployee.design}}</td>
+            <td>{{dataEmployee.age}}</td>
+            <td>{{dataEmployee.phone}}</td>
+            <td>{{dataEmployee.email}}</td>
+            <td>
+                <button class="Delete_Info" mat-raised-button color="primary" [routerLink]="['/EmployeeInformation', dataEmployee.id]"><mat-icon>edit</mat-icon></button>
+                <button class="Delete_Info" mat-raised-button color="warn" (click)="deleteInformation(dataEmployee.id)"><mat-icon>delete</mat-icon></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

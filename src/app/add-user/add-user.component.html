@@ -1,0 +1,42 @@
+<mat-card class="example-card">
+    <div class="container">
+        <h2 class="jumbotron text-center">Add USer</h2>
+
+        <form class="add-form" [formGroup]="addform" (ngSubmit)="addUser()" #myForm="ngForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Name" formControlName="name">
+
+
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-select placeholder="Select Plan" [(value)]="selected" formControlName="plan">
+
+                    <mat-option value="Saving Account">Saving Account</mat-option>
+                    <mat-option value="Current Account">Current Account</mat-option>
+                    <mat-option value="Mutual Account">Mutual Account</mat-option>
+                </mat-select>
+
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Amount</mat-label>
+                <input matInput placeholder="Amount" formControlName="amount">
+
+
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Due-Amount</mat-label>
+                <input matInput placeholder="Due-Amount" formControlName="dueAmount">
+
+
+            </mat-form-field>
+            <nav id="Buttons">
+
+                <button class="ilogin" mat-raised-button color="primary" routerLinkActive="active" type="submit" [disabled]="!myForm.form.valid">Save</button>
+                <button id="Cancel" mat-raised-button color="" routerLinkActive="active" routerLink="/Home">Cancel</button>
+            </nav>
+        </form>
+    </div>
+</mat-card>

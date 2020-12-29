@@ -1,0 +1,40 @@
+<mat-card class="example-card">
+    <div class="container">
+        <h2 class="jumbotron text-center">Add Plan</h2>
+
+        <form class="add-form" [formGroup]="addform" (ngSubmit)="addPlan()" #myForm="ngForm">
+
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>Plan Name</mat-label>
+                <input matInput placeholder="Plan Name" formControlName="planName">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Total Amount</mat-label>
+                <input matInput placeholder="Total Amount" formControlName="totalAmount">
+
+
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Amount Payable</mat-label>
+                <input matInput placeholder="Amount Payable" formControlName="amountPayable">
+
+
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Duration</mat-label>
+                <input matInput placeholder="Duration" formControlName="Duration">
+
+
+            </mat-form-field>
+            <nav id="Buttons">
+
+                <button class="ilogin" mat-raised-button color="primary" routerLinkActive="active" type="submit" [disabled]="!myForm.form.valid">Save</button>
+                <button id="Cancel" mat-raised-button color="" routerLinkActive="active" routerLink="/Home">Cancel</button>
+            </nav>
+        </form>
+    </div>
+</mat-card>

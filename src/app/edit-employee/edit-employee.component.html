@@ -1,0 +1,43 @@
+<mat-card class="example-card">
+    <div class="container" *ngIf="isUpdated">
+        <h2 class="jumbotron text-center">UPDATE Employee {{employee.name}}</h2>
+
+        <form class="update-form" [formGroup]="updateform" (ngSubmit)="UpdateEmployee()" #myForm="ngForm">
+
+
+
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>Design</mat-label>
+                <input matInput formControlName="design" [(ngModel)]="employee.design">
+
+
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Age</mat-label>
+                <input matInput [(ngModel)]="employee.age" formControlName="age">
+
+
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>E-mail</mat-label>
+                <input matInput [(ngModel)]="employee.email" formControlName="email">
+
+
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input matInput [(ngModel)]="employee.phone" formControlName="phone">
+
+
+            </mat-form-field>
+
+            <nav id="Buttons">
+                <button class="Save" mat-raised-button color="primary" routerLinkActive="active" type="submit" [disabled]="!myForm.form.valid">Save</button>
+                <button id="Cancel" mat-raised-button color="" routerLinkActive="active" routerLink="/Home">Cancel</button>
+            </nav>
+        </form>
+    </div>
+</mat-card>

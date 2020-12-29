@@ -1,0 +1,31 @@
+<div class="newElement">
+    <h2 class="card-title">
+        <i class="fa fa-product-hunt" aria-hidden="true"></i> Plan Details</h2>
+    <button class="ilogin" mat-raised-button color="primary" routerLink="/AddPlanInfo" routerLinkActive="active" type="submit"><mat-icon>person_add</mat-icon>Add Plan</button>
+</div>
+
+<table class="content-table">
+    <thead>
+        <tr>
+
+            <th>Plan Name</th>
+            <th>Total Amount</th>
+            <th>Amount Payable</th>
+            <th>Duration</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataPlan of dataPlan" class="text-center">
+
+            <td>{{dataPlan.planName}}</td>
+            <td>{{dataPlan.totalAmount}}</td>
+            <td>{{dataPlan.amountPayable}}</td>
+            <td>{{dataPlan.Duration}}</td>
+            <td>
+                <button class="Delete_Info" mat-raised-button color="primary" [routerLink]="['/planInformation', dataPlan.id]"><mat-icon>edit</mat-icon></button>
+                <button class="Delete_Info" mat-raised-button color="warn" (click)="deleteInformation(dataPlan.id)"><mat-icon>delete</mat-icon></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
